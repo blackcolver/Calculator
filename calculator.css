@@ -1,0 +1,68 @@
+/* Set box-sizing to border-box for easier layout calculations */
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: Gotham Rounded, sans-serif; /* Set the font family for the entire document */
+  font-weight: normal; /* Set the font weight to normal */
+}
+
+/* Reset margin and padding on the body element */
+body {
+  padding: 0;
+  margin: 0;
+  /* Apply a linear gradient background from #FBEEC1 to #DAAD86 */
+  background: linear-gradient(to right, #FBEEC1, #DAAD86);
+}
+
+/* Style for the calculator grid container */
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh; /* Set the minimum height of the grid to 100% of the viewport height */
+  grid-template-columns: repeat(4, 100px); /* Define a grid with 4 columns, each 100px wide */
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px); /* Define rows with a minimum height of 120px for the output and 5 rows with 100px height */
+}
+
+/* Style for calculator buttons */
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  background-color: rgba(255, 255, 255, .75); /* Set the background color with slight transparency */
+}
+
+/* Style for button hover effect */
+.calculator-grid > button:hover {
+  background-color: rgba(255, 255, 255, .9); /* Change background color on hover with a higher transparency */
+}
+
+/* Style for spanning two columns in the grid */
+.span-two {
+  grid-column: span 2;
+}
+
+/* Style for the output container */
+.output {
+  grid-column: 1 / -1; /* Span the output container across all columns */
+  background-color: rgba(0, 0, 0, .75); /* Set a background color with transparency */
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+/* Style for the previous operand in the output container */
+.output .previous-operand {
+  color: rgba(255, 255, 255, .75); /* Set text color with transparency */
+  font-size: 1.5rem; /* Set the font size for the previous operand */
+}
+
+/* Style for the current operand in the output container */
+.output .current-operand {
+  color: white; /* Set text color to white */
+  font-size: 2.5rem; /* Set the font size for the current operand */
+}
